@@ -1,0 +1,105 @@
+:root {
+  --black: #000000; /* Black */
+  --white: #ffffff; /* White */
+  --color1: #283149; /* Background */
+  --color2: #ff0d92; /* Red */
+  --color3: #404b69; /* Light Blue */
+  --color4: #5479fe; /* Purple */
+}
+
+body {
+  font-family: "Gabarito", sans-serif;
+  text-align: center;
+  background-color: var(--color1);
+}
+
+#title {
+  margin: 0;
+  margin-top: 2rem;
+  width: 300px;
+  padding: 0;
+}
+
+.d {
+  background-image: url("./images/hi-hat.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.f {
+  background-image: url("./images/snare-drum.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.g {
+  background-image: url("./images/high-tom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h {
+  background-image: url("./images/kick-drum.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.j {
+  background-image: url("./images/middle-tom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.k {
+  background-image: url("./images/floor-tom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.l {
+  background-image: url("./images/crash-cymbal.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.set {
+  margin: 5% auto;
+}
+
+.game-over {
+  background-color: var(--color2);
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 var(--color2);
+  opacity: 0.5;
+}
+
+.red {
+  color: var(--color2);
+}
+
+.drum {
+  outline: none;
+  border: 10px solid var(--color3);
+  border-radius: 1rem;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color4);
+  text-align: left;
+  padding-bottom: 5.6rem;
+  text-shadow: 2px 2px var(--white);
+  text-transform: uppercase;
+}
