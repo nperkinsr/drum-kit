@@ -272,7 +272,6 @@ input {
 }
 
 .panel-heading p,
-.sequence-help,
 .tempo-row label {
   margin: 0;
   color: var(--text-soft);
@@ -295,7 +294,6 @@ input {
 }
 
 #sequence-input:focus,
-#tempo:focus,
 .control-button:focus,
 .drum:focus {
   outline: 3px solid rgba(123, 223, 242, 0.6);
@@ -347,15 +345,6 @@ input {
 #tempo {
   width: 100%;
   accent-color: var(--accent);
-}
-
-.sequence-help {
-  margin-top: 16px;
-  min-height: 1.5em;
-}
-
-.sequence-help.error {
-  color: #ff8b94;
 }
 
 .set {

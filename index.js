@@ -33,7 +33,6 @@ var demoSequence = "K H S H K H S H K H S H K K S C";
 var audioCache = {};
 var drumButtons = document.querySelectorAll(".drum");
 var sequenceInput = document.getElementById("sequence-input");
-var sequenceHelp = document.getElementById("sequence-help");
 var playSequenceButton = document.getElementById("play-sequence");
 var stopSequenceButton = document.getElementById("stop-sequence");
 var loadDemoButton = document.getElementById("load-demo");
@@ -71,12 +70,10 @@ playSequenceButton.addEventListener("click", function () {
 
 stopSequenceButton.addEventListener("click", function () {
   stopSequence();
-  setHelpText("Sequence stopped.");
 });
 
 loadDemoButton.addEventListener("click", function () {
   sequenceInput.value = demoSequence;
-  setHelpText("Demo loaded. Press Play Sequence to hear it.");
 });
 
 tempoSlider.addEventListener("input", function () {
@@ -113,7 +110,6 @@ function playSequence() {
   var steps = parseSequence(sequenceInput.value);
 
   if (!steps.length) {
-    setHelpText("Type a sequence first. Try: " + demoSequence, true);
     return;
   }
 
@@ -151,22 +147,12 @@ function parseSequence(sequenceText) {
   });
 
   if (invalidSteps.length) {
-    setHelpText(
-      "Unknown instrument key: " + invalidSteps[0].toUpperCase() + ". Use only H, S, K, C, T, M, or F.",
-      true
-    );
     return [];
   }
 
   if (!normalizedSteps.length) {
-    setHelpText("Use letters like K H S H or KHSHKHSC to build a beat.", true);
     return [];
   }
 
   return normalizedSteps;
-}
-
-function setHelpText(message, isError) {
-  sequenceHelp.textContent = message;
-  sequenceHelp.classList.toggle("error", Boolean(isError));
 }
