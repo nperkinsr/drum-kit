@@ -7,4 +7,5 @@ It’s a hands-on way to learn how to trigger actions with both clicks and keyst
 
 https://nperkinsr.github.io/drum-kit/
 
-![Screenshot 2025-03-15 at 12 46 10](https://github.com/user-attachments/assets/8ed0fa3a-de0c-416c-8137-eb35d6ea87d8)
+<img width="1931" height="977" alt="Screenshot 2026-03-28 at 00 17 49" src="https://github.com/user-attachments/assets/12ce561c-dd17-4f7d-8be3-3604a608c403" />
+
