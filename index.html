@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Drum Kit</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +12,89 @@
 </head>
 
 <body>
-
-  <img id="title" src="./images/logo.png" alt="Drum Kit Logo" />
-
-  <div class="set">
-    <button class="d drum">d</button>
-    <button class="f drum">f</button>
-    <button class="g drum">g</button>
-    <button class="h drum">h</button>
-    <button class="j drum">j</button>
-    <button class="k drum">k</button>
-    <button class="l drum">l</button>
+  <div class="ambient-motion" aria-hidden="true">
+    <span class="bokeh bokeh-one"></span>
+    <span class="bokeh bokeh-two"></span>
+    <span class="bokeh bokeh-three"></span>
+    <span class="dust dust-one"></span>
+    <span class="dust dust-two"></span>
+    <span class="dust dust-three"></span>
+    <span class="dust dust-four"></span>
+    <span class="dust dust-five"></span>
+    <span class="dust dust-six"></span>
+    <span class="dust dust-seven"></span>
+    <span class="dust dust-eight"></span>
+    <span class="dust dust-nine"></span>
   </div>
 
+  <main class="wrapper">
+    <section class="hero">
+      <img id="title" src="./images/logo.png" alt="Drum Kit Logo">
+
+      <div class="hero-copy">
+        <p class="eyebrow">Play with clicks, keys, or a typed sequence</p>
+        <h1>A browser-based drum kit you can play anytime, anywhere</h1>
+        <p class="hero-text">
+          Turn your keyboard into a drum set and pretend you know what you’re doing. No experience required, confidence
+          optional.
+        </p>
+      </div>
+    </section>
+
+    <section class="controls-panel">
+      <div class="panel-heading">
+        <h2>Beat Sequencer</h2>
+        <p>Type instrument letters with spaces. Example: <code>K H S H K H S H K H S H K K S C</code></p>
+      </div>
+
+      <label class="sequence-label" for="sequence-input">Sequence</label>
+      <textarea id="sequence-input" rows="3" spellcheck="false">K H S H K H S H K H S H K K S C</textarea>
+
+      <div class="sequence-actions">
+        <button id="play-sequence" class="control-button" type="button">Play Sequence</button>
+        <button id="stop-sequence" class="control-button secondary" type="button">Stop</button>
+        <button id="load-demo" class="control-button ghost" type="button">Load Demo Beat</button>
+      </div>
+
+      <div class="tempo-row">
+        <label for="tempo">Tempo <span id="tempo-value">170 BPM</span></label>
+        <input id="tempo" type="range" min="70" max="200" value="170">
+      </div>
+
+      <p id="sequence-help" class="sequence-help"></p>
+    </section>
+
+    <section class="set" aria-label="Drum kit">
+      <button class="drum" data-key="h" data-sound="hi-hat" type="button">
+        <span class="key">H</span>
+        <span class="name">Hi-Hat</span>
+      </button>
+      <button class="drum" data-key="s" data-sound="snare" type="button">
+        <span class="key">S</span>
+        <span class="name">Snare</span>
+      </button>
+      <button class="drum" data-key="k" data-sound="kick" type="button">
+        <span class="key">K</span>
+        <span class="name">Kick</span>
+      </button>
+      <button class="drum" data-key="c" data-sound="crash" type="button">
+        <span class="key">C</span>
+        <span class="name">Crash</span>
+      </button>
+      <button class="drum" data-key="t" data-sound="high-tom" type="button">
+        <span class="key">T</span>
+        <span class="name">High Tom</span>
+      </button>
+      <button class="drum" data-key="m" data-sound="middle-tom" type="button">
+        <span class="key">M</span>
+        <span class="name">Middle Tom</span>
+      </button>
+      <button class="drum" data-key="f" data-sound="floor-tom" type="button">
+        <span class="key">F</span>
+        <span class="name">Floor Tom</span>
+      </button>
+    </section>
+  </main>
 
   <script src="./index.js"></script>
 </body>
