@@ -118,17 +118,12 @@ function playSequence() {
   }
 
   stopSequence();
-  setHelpText("Playing " + steps.length + " hits at " + tempoSlider.value + " BPM.");
 
   var interval = 60000 / Number(tempoSlider.value);
 
   steps.forEach(function (step, index) {
     var timeoutId = window.setTimeout(function () {
       playDrum(step);
-
-      if (index === steps.length - 1) {
-        setHelpText("Sequence finished. Edit it or play it again.");
-      }
     }, interval * index);
 
     activeSequenceTimeouts.push(timeoutId);
