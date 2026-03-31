@@ -77,8 +77,11 @@ loadDemoButton.addEventListener("click", function () {
 });
 
 tempoSlider.addEventListener("input", function () {
-  tempoValue.textContent = tempoSlider.value + " BPM";
+  tempoValue.textContent = Math.round(Number(tempoSlider.value)) + " BPM";
+  updateTempoSliderFill();
 });
+
+updateTempoSliderFill();
 
 function playDrum(key) {
   var config = drumConfig[key];
@@ -90,6 +93,15 @@ function playDrum(key) {
   var sound = audioCache[key].cloneNode();
   sound.play();
   buttonAnimation(key);
+}
+
+function updateTempoSliderFill() {
+  var min = Number(tempoSlider.min);
+  var max = Number(tempoSlider.max);
+  var value = Number(tempoSlider.value);
+  var progress = ((value - min) / (max - min)) * 100;
+
+  tempoSlider.style.setProperty("--tempo-progress", progress + "%");
 }
 
 function buttonAnimation(key) {

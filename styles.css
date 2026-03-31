@@ -3,6 +3,7 @@
   --bg-mid: #16365d;
   --panel: rgba(9, 24, 44, 0.82);
   --panel-border: rgba(255, 255, 255, 0.1);
+  --input-fill: rgba(255, 255, 255, 0.06);
   --text-main: #f5f7fb;
   --text-soft: #c2d0e5;
   --accent: #ffb703;
@@ -289,7 +290,7 @@ input {
   border-radius: 16px;
   padding: 16px;
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--input-fill);
   resize: vertical;
 }
 
@@ -344,7 +345,56 @@ input {
 
 #tempo {
   width: 100%;
-  accent-color: var(--accent);
+  height: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) var(--tempo-progress, 43.48%),
+    var(--input-fill) var(--tempo-progress, 43.48%),
+    var(--input-fill) 100%
+  );
+  border-radius: 999px;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+#tempo::-webkit-slider-runnable-track {
+  height: 16px;
+  background: transparent;
+  border-radius: 999px;
+}
+
+#tempo::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -4px;
+  border: 2px solid rgba(9, 23, 43, 0.18);
+  border-radius: 50%;
+  background: #d7dde6;
+}
+
+#tempo::-moz-range-track {
+  height: 16px;
+  background: var(--input-fill);
+  border-radius: 999px;
+}
+
+#tempo::-moz-range-progress {
+  height: 16px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+#tempo::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(9, 23, 43, 0.18);
+  border-radius: 50%;
+  background: #d7dde6;
 }
 
 .set {
